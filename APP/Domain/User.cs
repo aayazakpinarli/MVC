@@ -29,17 +29,5 @@ namespace APP.Domain
 
         public string Address { get; set; }
 
-        public int? GroupId { get; set; }
-
-        public Group Group { get; set; }
-
-        public List<UserRole> UserRoles { get; set; } = new List<UserRole>();
-
-        [NotMapped]
-        public List<int> RoleIds
-        {
-            get => UserRoles.Select(userRoleEntity => userRoleEntity.RoleId).ToList();
-            set => UserRoles = value?.Select(roleId => new UserRole() { RoleId = roleId }).ToList();
-        }
     }
 }

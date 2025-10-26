@@ -1,4 +1,13 @@
+using APP.Domain;
+using APP.Models;
+using CORE.APP.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DbContext, Db>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Db")));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

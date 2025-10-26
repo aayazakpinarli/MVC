@@ -6,7 +6,5 @@ namespace APP.Domain
     {
         public string Name { get; set; }
 
-        public Book Book { get; set; }
-
     }
 }
